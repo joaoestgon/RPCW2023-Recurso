@@ -4,8 +4,8 @@ var router = express.Router();
 var repairController = require('../controllers/repair');
 
 router.get('/', function(req, res, next) {
-  if (req.query.year) {
-    repairController.listByYear(req.query.year)
+  if (req.query.ano) {
+    repairController.listByYear(req.query.ano)
       .then(data => res.jsonp(data))
       .catch(err => res.status(500).jsonp(err));
   }

@@ -1,11 +1,10 @@
 ## Exercício 1:
 
     1. Tratamento do dataset fornecido:
-        -> Removi alguns caracteres que não estavam em utf-8
-        -> Fiz um script python para...
+        -> Trasnformei em jsonArray
 
     2. Criação da base de dados e das coleções
-        -> Comando: mongoimport -d -c --jsonArray 
+        -> Comando: mongoimport dataset_reparacoes.json -d autoRepair -c repairs --jsonArray 
 
     3. Criação do servidor em nodejs 
         -> Comando: "npx express-generator --view=pug ex1"
@@ -14,7 +13,7 @@
             - "npm i mongoose --save"
             - "npm i nodemon --save-dev"
         -> Acrescentei um modo de "development" (dev) no package.json
-        -> O servidor pode ser lançado com "npm start" e fica à escuta na porta XXX
+        -> O servidor pode ser lançado com "npm start" e fica à escuta na porta 16016
 
 ## Repostas
 
@@ -42,4 +41,4 @@ R: 91
             - "npm i axios --save" 
             - "npm i nodemon --save-dev"
         -> Acrescentei um modo de "development" (dev) no package.json
-        -> O servidor pode ser lançado com "npm start" e fica à escuta na porta XXX
+        -> O servidor pode ser lançado com "npm start" e fica à escuta na porta 16017
