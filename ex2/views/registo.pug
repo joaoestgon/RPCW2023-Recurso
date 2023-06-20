@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-teal
+      h1 Registo #{v[0]._id}:
+        
+    .w3-container
+        ul.w3-ul.w3-card-4
+            li #[b Nome:] #{v[0].nome}
+            li #[b NIF:] #{v[0].nif}
+            li #[b Data:] #{v[0].data}
+            li #[b Viatura:]
+        ul
+            li #[b Marca:] #{v[0].viatura.marca}
+            li #[b Modelo:] #{v[0].viatura.modelo}
+            li #[b Matricula:] #{v[0].viatura.matricula}
+            li #[b Número de Intervenções:] #{v[0].nr_intervencoes}
+            li #[b Intervenções:]
+        ul
+            each interv in v[0].intervencoes
+                li
+                    b Código: #{interv.codigo}
+                    b Nome: #{interv.nome}
+                    b Descrição: #{interv.descricao}
+
+    footer.w3-container.w3-teal 
+        a(href="/") Voltar

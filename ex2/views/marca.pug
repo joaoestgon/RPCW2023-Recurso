@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-teal
+      h1 Index of #{vs[0].viatura.marca}
+    .w3-container
+        ul.w3-ul.w3-card-4
+            li #[b Modelos:] #{modelos}
+    .w3-container
+      table.w3-table-all
+        tr
+          th Id 
+          th Modelo
+          th Data
+          th Nome
+          th Matrícula
+          th Nr. de Intervenções
+          th Intervenções
+        each v in vs
+          tr
+            td
+              a(href="/" + v._id)=v._id
+            td=v.viatura.modelo
+            td=v.data
+            td=v.nome
+            td=v.viatura.matricula
+            td=v.nr_intervencoes
+            td
+                ul
+                each interv in v.intervencoes
+                    li
+                        b Código: #{interv.codigo}
+                        b Nome: #{interv.nome}
+                        b Descrição: #{interv.descricao}

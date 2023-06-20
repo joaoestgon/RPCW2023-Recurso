@@ -18,7 +18,20 @@
 
 ## Repostas
 
-#### 1.
+#### 1. db.repairs.find().count() 
+
+R: 5000
+
+#### 2. db.repairs.count({ "viatura.marca": "Cadillac" })
+
+R: 91
+
+
+#### 3. db.repairs.aggregate([{ $group: { _id: "$viatura.marca" } },{ $sort: { _id: 1 } }])
+
+#### 4. db.repairs.aggregate([{ $unwind: "$intervencoes" },{ $group: { _id: "$intervencoes.nome", total: { $sum: 1 } } }])
+
+#### 5. db.repairs.aggregate([{ $group: { _id: { $year: { $dateFromString: { dateString: "$data" } } }, count: { $sum: 1 } } },{ $sort: { _id: 1 } }])
 
 ## Exercício 2
 
